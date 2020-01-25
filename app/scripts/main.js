@@ -76,4 +76,13 @@
   }
 
   // Your custom JavaScript goes here
+  const button = document.querySelector('button');
+  const baconImg = document.querySelector('[alt=Bacon]');
+
+  const addBacon = () => {
+    const bacon = baconImg.cloneNode();
+    baconImg.parentElement.append(bacon);
+  };
+
+  button.addEventListener('click', addBacon);
 })();
