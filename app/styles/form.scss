@@ -1,0 +1,184 @@
+$color-font-dark: #1D211E;
+$color-font-light-dark: #4A544E;
+$color-success: #6bd400;
+$color-white: #fff;
+$color-black: #000;
+$background-light: #fafafa;
+$color-border: rgba(0,0,0,0.2);
+$color-error: #f00;
+$shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+
+#checkout {
+    * {
+        box-sizing: border-box;
+    }
+    //basic layout and colors
+    .section--grey {
+        background: $background-light;
+        padding: 40px;
+        max-width: 1000px;
+
+        .mdl-textfield__label {
+            font-size: 11px;
+            top: 0;
+            color: $color-font-light-dark;
+            font-weight: 600;
+            padding-left: 5px;
+        }
+        
+        .mdl-textfield__input {
+            padding: 5px;
+            border: 0;
+        }
+
+        select.mdl-textfield__input {
+            appearance: none;
+            position: relative;
+        }
+
+        .mdl-textfield {
+            padding-bottom: 0;
+            border-radius: 4px;
+            box-shadow: $shadow;
+            background: $color-white;
+
+            &--error {
+                border: 1px solid $color-error;
+                box-shadow: none;
+            }
+        }
+
+        
+    }
+
+    .checkout {
+
+        section {
+            margin-bottom: 0;
+        }
+
+        //personal info section
+        &__info-section {
+
+            &-title {
+                color: $color-font-dark;
+                font-size: 13px;
+                font-weight: bold;
+                position: relative;
+
+                &:before {
+                    content: attr(data-number); 
+                    position: absolute;
+                    width: 22px;
+                    height: 22px;
+                    left: -30px;
+                    line-height: 22px;
+                    top:-5px;
+                    color: $color-white;
+                    background: $color-black;
+                    border-radius: 50%;
+                    text-align: center;
+                }
+            }
+        }
+
+        &__submit-btn {
+            background: $color-success;
+            padding: 20px;
+            color: $color-white;
+            font-weight: 700;
+            border: 0;
+            border-radius: 5px;
+            text-align: center;
+            position: static;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        //order section
+        &__order-section {
+            padding: 8px;
+            background: $color-white;
+            margin-top: 45px;
+            height: fit-content;
+            border-radius: 5px;
+            box-shadow: $shadow;
+
+            &-wrapper {
+                padding: 15px;
+                border: 1px dashed $color-border;
+                border-radius: 5px;
+            }
+
+            &-title{
+                margin: 0 0 15px;
+                font-size: 12px;
+                font-weight: 600;
+                color: $color-font-dark;
+            }
+
+            .checkout__order-items,  .checkout__order-summary {
+                width: 100%;
+                color: $color-font-dark;
+                font-size: 13px;
+                list-style: none;
+                padding: 0;
+            }
+
+            .checkout__order-items {
+                border-bottom: 1px dashed $color-border;
+                padding-bottom: 15px;
+            }
+        
+        
+            .checkout__order-item {
+                display: flex;
+                justify-content: space-between;;
+            }
+        
+            .checkout__order-summary {
+                font-weight: 700;
+
+                .order-summary {
+                    display: flex;
+                    justify-content: space-between;;
+                }
+
+                .order-summary__price {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        //icons 
+        .expand-icon {
+            right: 10px;
+            position: absolute;
+            bottom: 4px;
+        }
+
+        .shopping-cart-icon {
+            font-size: 20px;
+            display: block;
+            padding-right: 10px;
+        }
+
+        .lock-icon {
+            position: absolute;
+            top: -3px;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        .credit-card-icon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 35px;
+            transform: translateY(-50%);
+            padding-right: 10px;
+        }
+    }
+}

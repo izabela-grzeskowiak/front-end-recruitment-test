@@ -51,6 +51,8 @@
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
+
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -68,6 +70,7 @@
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
+          <a href="#checkout" class="mdl-layout__tab">Checkout</a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -228,6 +231,105 @@
             </div>
           </section>
         </div>
+
+        <div class="mdl-layout__tab-panel" id="checkout">
+          <section class="section--center mdl-grid mdl-grid--no-spacing section--grey">
+            <!-- checkout personal information -->
+            <section class="mdl-cell--8-col checkout__info-section">
+              <form class="checkout">
+                <section class="mdl-grid">
+                  <h5 class="checkout__info-section-title mdl-cell--12-col mdl-cell" data-number="1">PERSONAL INFORMATION</h5>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="first_name">First name</label>
+                    <input class="mdl-textfield__input required" type="text" id="first_name" placeholder="Elon">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="last_name">Last name</label>
+                    <input class="mdl-textfield__input required" type="text" id="last_name" placeholder="Musk">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--12-col">
+                    <label class="mdl-textfield__label" for="email">Email</label>
+                    <input class="mdl-textfield__input required" type="email" id="email" placeholder="elon@spacex.com">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="country">Country</label>
+                    <select class="mdl-textfield__input" name="country" id="country">
+                      <option selected value="United States">United States</option>
+                      <option value="Poland">Poland</option>
+                    </select>
+                    <i class="material-icons expand-icon">expand_more</i>
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="postal_code">Postal code</label>
+                    <input class="mdl-textfield__input required" type="number" id="postal_code" placeholder="10002">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--12-col">
+                    <label class="mdl-textfield__label" for="phone">Phone number</label>
+                    <input class="mdl-textfield__input required" type="text" id="phone" placeholder="(212)-844-272">
+                  </div>
+                </section>
+                <section class="mdl-grid">
+                  <h5 class="checkout__info-section-title mdl-cell--12-col mdl-cell" data-number="2">PAYMENT DETAILS
+                    <i class="material-icons lock-icon">lock</i>
+                  </h5>
+                  <div class="mdl-textfield mdl-cell mdl-cell--12-col">
+                    <label class="mdl-textfield__label" for="credit-card-number">Credit card number</label>
+                    <input class="mdl-textfield__input required" type="text" id="credit-card-number" placeholder="0000-0000-0000-0000">
+                    <img class="credit-card-icon"  alt="credit card icon" src="https://img.icons8.com/color/48/000000/visa.png">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="security-code">Security code</label>
+                    <input class="mdl-textfield__input required" type="password" id="security-code" placeholder="***">
+                  </div>
+                  <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
+                    <label class="mdl-textfield__label" for="expiration-date">Expiration date</label>
+                    <input class="mdl-textfield__input required" type="text" id="expiration-date" placeholder="MM / YY">
+                  </div>
+                  <button class="mdl-cell mdl-cell--12-col checkout__submit-btn" type="submit">
+                    <i class="material-icons shopping-cart-icon">shopping_cart</i>
+                    COMPLETE PURCHASE</button>
+                </section>
+              </form>
+            </section>
+            
+            <!-- order summary -->
+            <aside class="checkout__order-section mdl-cell--4-col mdl-cell--12-col-tablet">
+              <div class="checkout__order-section-wrapper">
+                <h5 class="checkout__order-section-title">YOUR ORDER</h5>
+                <ul class="checkout__order-items"> 
+                    <li class="checkout__order-item">
+                      <td class="order-item__name">Apple Watch Sport</span>
+                      <span class="order-item__price">$ 580</span>
+                    </li>
+                    <li class="checkout__order-item">
+                      <span class="order-item__name">Modern Buckle</span>
+                      <span class="order-item__price">$ 380</span>
+                    </li>
+                  </ul>
+
+                <ul class="checkout__order-items">
+                    <li class="checkout__order-item">
+                      <span class="order-item__name">Total purchases</span>
+                      <span class="order-item__price">$ 960.00</span>
+                    </li>
+                    <li class="checkout__order-item">
+                      <span class="order-item__name">Estimated tax</span>
+                      <span class="order-item__price">$ 0</span>
+                    </li>
+                  </ul>
+
+                <ul class="checkout__order-summary">
+                    <li class="order-summary">
+                      <span class="order-summary__total">Total</span>
+                      <span class="order-summary__price">$ 960</span>
+                    </li>
+                  </ul>
+              </div>  
+            </aside>
+          </section> 
+        </div>
+
+
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
