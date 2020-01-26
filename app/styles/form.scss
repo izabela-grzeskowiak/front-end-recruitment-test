@@ -31,6 +31,12 @@ $shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px
             border: 0;
         }
 
+        .mdl-textfield__error-message {
+            color: $color-error;
+            font-size: 11px;
+            position: absolute;
+        }
+
         select.mdl-textfield__input {
             appearance: none;
             position: relative;
@@ -149,6 +155,27 @@ $shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px
                 .order-summary__price {
                     font-size: 20px;
                 }
+            }
+        }
+
+        &__success-message {
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            background-color: $color-success;
+            color: $color-white;
+            position: absolute;
+            font-size: 25px;
+            z-index: 3;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%);
+            line-height: 100px;
+            border-radius: 5px;
+            display: none;
+            
+            &--visible {
+                display: block;
             }
         }
 

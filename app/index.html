@@ -241,15 +241,15 @@
                   <h5 class="checkout__info-section-title mdl-cell--12-col mdl-cell" data-number="1">PERSONAL INFORMATION</h5>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                     <label class="mdl-textfield__label" for="first_name">First name</label>
-                    <input class="mdl-textfield__input required" type="text" id="first_name" placeholder="Elon">
+                    <input class="mdl-textfield__input required" type="text" id="first_name" placeholder="Elon" data-validate="first_name">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                     <label class="mdl-textfield__label" for="last_name">Last name</label>
-                    <input class="mdl-textfield__input required" type="text" id="last_name" placeholder="Musk">
+                    <input class="mdl-textfield__input required" type="text" id="last_name" placeholder="Musk"  data-validate="last_name">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--12-col">
                     <label class="mdl-textfield__label" for="email">Email</label>
-                    <input class="mdl-textfield__input required" type="email" id="email" placeholder="elon@spacex.com">
+                    <input class="mdl-textfield__input required" type="text" id="email" placeholder="elon@spacex.com" data-validate="email">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                     <label class="mdl-textfield__label" for="country">Country</label>
@@ -261,11 +261,11 @@
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
                     <label class="mdl-textfield__label" for="postal_code">Postal code</label>
-                    <input class="mdl-textfield__input required" type="number" id="postal_code" placeholder="10002">
+                    <input class="mdl-textfield__input required" type="number" id="postal_code" placeholder="10002" data-validate="postal_code">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--12-col">
                     <label class="mdl-textfield__label" for="phone">Phone number</label>
-                    <input class="mdl-textfield__input required" type="text" id="phone" placeholder="(212)-844-272">
+                    <input class="mdl-textfield__input required" type="text" id="phone" placeholder="(212)-844-272"  data-validate="phone">
                   </div>
                 </section>
                 <section class="mdl-grid">
@@ -273,17 +273,17 @@
                     <i class="material-icons lock-icon">lock</i>
                   </h5>
                   <div class="mdl-textfield mdl-cell mdl-cell--12-col">
-                    <label class="mdl-textfield__label" for="credit-card-number">Credit card number</label>
-                    <input class="mdl-textfield__input required" type="text" id="credit-card-number" placeholder="0000-0000-0000-0000">
+                    <label class="mdl-textfield__label" for="credit_card_number">Credit card number</label>
+                    <input class="mdl-textfield__input required" type="text" id="credit_card_number" placeholder="0000-0000-0000-0000" data-validate="credit_card_number">
                     <img class="credit-card-icon"  alt="credit card icon" src="https://img.icons8.com/color/48/000000/visa.png">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-                    <label class="mdl-textfield__label" for="security-code">Security code</label>
-                    <input class="mdl-textfield__input required" type="password" id="security-code" placeholder="***">
+                    <label class="mdl-textfield__label" for="security_code">Security code</label>
+                    <input class="mdl-textfield__input required" type="password" id="security_code" placeholder="***" data-validate="secutity_code" maxlength="3">
                   </div>
                   <div class="mdl-textfield mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-                    <label class="mdl-textfield__label" for="expiration-date">Expiration date</label>
-                    <input class="mdl-textfield__input required" type="text" id="expiration-date" placeholder="MM / YY">
+                    <label class="mdl-textfield__label" for="expiration_date">Expiration date</label>
+                    <input class="mdl-textfield__input required" type="text" id="expiration_date" placeholder="MM/YY"  data-validate="expiration_date">
                   </div>
                   <button class="mdl-cell mdl-cell--12-col checkout__submit-btn" type="submit">
                     <i class="material-icons shopping-cart-icon">shopping_cart</i>
@@ -327,6 +327,9 @@
               </div>  
             </aside>
           </section> 
+          <div class="checkout__success-message">
+            Thank you for your order!
+          </div>
         </div>
 
 
@@ -389,6 +392,8 @@
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/form-validation.js"></script>
+
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
