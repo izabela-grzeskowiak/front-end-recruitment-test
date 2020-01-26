@@ -83,7 +83,7 @@
     }
   };
 
-  const validateInput = input => {
+  const isInputValid = input => {
     cleanErrors(input);
     const validationType = input.getAttribute("data-validate");
     const validators = validationSchema[validationType];
@@ -96,6 +96,7 @@
         errorRegistered = true;
       }
     });
+    return !errorRegistered;
   };
 
   const showSuccessMessage = () => {
@@ -104,21 +105,18 @@
       .classList.add("checkout__success-message--visible");
   };
 
-  const isFormValid = () => {
-    if (!document.querySelector(".mdl-textfield__error-message")) {
-      showSuccessMessage();
-    }
-  };
-
   if (!form) return;
 
   inputs.forEach(input => {
-    input.addEventListener("blur", () => validateInput(input));
+    input.addEventListener("blur", () => isInputValid(input));
   });
 
   form.addEventListener("submit", event => {
     event.preventDefault();
-    inputs.forEach(input => validateInput(input));
-    isFormValid();
+
+    let inputStatuses = [];
+
+    inputs.forEach(input => inputStatuses.push(isInputValid(input)));
+    inputStatuses.every(input => input) ? showSuccessMessage() : "";
   });
 })();
