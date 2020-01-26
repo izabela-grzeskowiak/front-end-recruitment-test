@@ -18,6 +18,10 @@ $shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px
         padding: 40px;
         max-width: 1000px;
 
+        @media (max-width: 839px) {
+            flex-direction: column-reverse;
+        }
+
         .mdl-textfield__label {
             font-size: 11px;
             top: 0;
